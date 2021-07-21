@@ -7,6 +7,8 @@
 
 /* this file included from control.c */
 
+#define uninitialized_var(x) x = x
+
 #include <linux/compat.h>
 #include <linux/slab.h>
 
@@ -414,7 +416,7 @@ static int snd_ctl_elem_add_compat(struct snd_ctl_file *file,
  error:
 	kfree(data);
 	return err;
-}  
+}
 
 enum {
 	SNDRV_CTL_IOCTL_ELEM_LIST32 = _IOWR('U', 0x10, struct snd_ctl_elem_list32),
