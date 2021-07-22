@@ -2,6 +2,8 @@
 /*
  */
 
+#define uninitialized_var(x) x = x
+
 #include <linux/gfp.h>
 #include <linux/init.h>
 #include <linux/ratelimit.h>
